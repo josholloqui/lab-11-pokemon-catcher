@@ -1,6 +1,4 @@
-import { POKESTATS } from './constants.js'
-
-let resultsWildPokemon = JSON.parse(localStorage.getItem(POKESTATS));
+import { POKESTATS } from './constants.js';
 
 export function getRandomPokemon(pokemonArray) {
     const randomIndex = Math.floor(Math.random() * pokemonArray.length);
@@ -20,8 +18,15 @@ export function findById(someArray, someId) {
     return match;
 }
 
+export function getCart() {
+    const stringyCart = localStorage.getItem(POKESTATS);
+    let cart = JSON.parse(stringyCart);
+    
+    return cart;
+}
+
 export function addEncounters(id, someArray) {
-    const pokeResults = resultsWildPokemon;
+    const pokeResults = JSON.parse(localStorage.getItem(POKESTATS));
     const find = findById(someArray, id);
 
     if (find) {

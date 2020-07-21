@@ -76,4 +76,4 @@ export default [
         captured: 0,
         encountered: 0
     }
-]
+];

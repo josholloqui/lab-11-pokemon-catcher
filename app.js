@@ -1,4 +1,4 @@
-import { getRandomPokemon, findById, addEncounters } from './common/utils.js';
+import { getRandomPokemon, findById, addEncounters, getCart } from './common/utils.js';
 import { POKEMON, POKESTATS } from './common/constants.js';
 import pokemonData from './data/pokemon.js'
 import pokeDex from './data/poke.dex.js';
@@ -13,22 +13,24 @@ if (!wildPokemon) {
     wildPokemon = JSON.parse(localStorage.getItem(POKEMON));
 }
 
-let localResults = JSON.parse(localStorage.getItem(POKESTATS));
+let pokeBackpack = JSON.parse(localStorage.getItem(POKESTATS));
 
-if (!localResults) {
+if (!pokeBackpack) {
     localStorage.setItem(POKESTATS, JSON.stringify(pokeDex));
 
-    localResults = JSON.parse(localStorage.getItem(POKESTATS));
+    pokeBackpack = JSON.parse(localStorage.getItem(POKESTATS));
 }
 
 const collectWildPokemon = wildPokemon.slice();
-const resultsWildPokemon = localResults.slice();
+const notEncountered = wildPokemon.slice();
+
 // set event listeners to update state and DOM
 function setPage() {
     if (capturedPokemon === 10) {
         alert('You have caught 10 Pokemon! Lets take a look!');
+        window.location.replace('./results/index.html')
     }
-const pokeResults = resultsWildPokemon
+    const pokeResults = pokeBackpack;
     let wildEncounter1 = getRandomPokemon(collectWildPokemon);
     let wildEncounter2 = getRandomPokemon(collectWildPokemon);
     let wildEncounter3 = getRandomPokemon(collectWildPokemon);
@@ -41,6 +43,12 @@ const pokeResults = resultsWildPokemon
      while (wildEncounter1.id === wildEncounter2.id || wildEncounter1.id === wildEncounter3.id || wildEncounter2.id === wildEncounter3.id) {
         wildEncounter2 = getRandomPokemon(collectWildPokemon);
         wildEncounter3 = getRandomPokemon(collectWildPokemon);
+    }
+    
+    for (let i = 0; i < notEncountered.length; i++) {
+        if (trio[0] === notEncountered[i].id || trio[1] === notEncountered[i].id || trio[2] === notEncountered[i].id) {
+            notEncountered.splice([i], 1);
+        }
     }
 
     const pokeLabels = document.querySelectorAll('label');
@@ -67,18 +75,12 @@ const pokeResults = resultsWildPokemon
     images[2].src = wildEncounter3.url_image;
     names[2].textContent = wildEncounter3.pokemon;
     inputs[2].addEventListener('click', choosePokemonEvent);
-
-    inputs[0].disabled = false;
-    inputs[1].disabled = false;
-    inputs[2].disabled = false;
 }
 
 function choosePokemonEvent(e) {
-    capturedPokemon++;
-    const pokeResults = resultsWildPokemon;
+    const pokeResults = pokeBackpack;
     const chosenPokemon = e.target.value;
     const pokeInResults = findById(pokeResults, Number(chosenPokemon));
-    console.log(pokeInResults);
     
     if (pokeInResults) {
         pokeInResults.captured++;
@@ -86,16 +88,9 @@ function choosePokemonEvent(e) {
     const stringyCart = JSON.stringify(pokeResults);
     localStorage.setItem(POKESTATS, stringyCart);
 
-    const pokeLabels = document.querySelectorAll('label');
-    let inputs = [];
+    capturedPokemon++;
 
-    for (let i = 0; i <= 2; i++) {
-        inputs[i] = pokeLabels[i].children[1];
-    }
-
-    inputs[0].disabled = true;
-    inputs[1].disabled = true;
-    inputs[2].disabled = true;
+    setPage();
 }
 
 

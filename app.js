@@ -1,5 +1,5 @@
 import { getRandomPokemon, addEncounters, getCart, addCaptured } from './common/utils.js';
-import { POKEMON} from './common/constants.js';
+import { POKEMON } from './common/constants.js';
 import pokemonData from './data/pokemon.js';
 // initialize state
 let capturedPokemon = 0;
@@ -72,7 +72,7 @@ function setPage() {
 function choosePokemonEvent(e) {
     const chosenPokemon = e.target.value;
 
-    addCaptured(Number(chosenPokemon))
+    addCaptured(Number(chosenPokemon));
 
     capturedPokemon++;
 

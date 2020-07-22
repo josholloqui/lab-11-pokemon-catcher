@@ -23,7 +23,7 @@ main {
     height: 100%;
     min-width: 750px;
     padding-bottom: 625px;
-    padding-top: 50px;
+    padding-top: 30px;
     margin-bottom: calc(var(--footer-height));
 }
 
@@ -38,6 +38,7 @@ section {
     max-width: 80%;
     border-radius: 5px;
     border: solid 2px var(--color1);
+    padding-bottom: 100px;
 }
 
 div {
@@ -55,6 +56,7 @@ button {
 
 footer {
     display: flex;
+    visibility: hidden;
     justify-content: flex-end;
 }
 

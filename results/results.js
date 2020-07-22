@@ -6,8 +6,8 @@ const data = JSON.parse(localStorage.getItem(POKESTATS));
 const names = mungeNames(data);
 const captured = mungeCaptured(data);
 const encountered = mungeEncountered(data);
-console.log(names);
-var myChart = new Chart(ctx, {
+
+var myChart = new Chart(ctx, { // eslint-disable-line
     type: 'bar',
     data: {
         labels: names,

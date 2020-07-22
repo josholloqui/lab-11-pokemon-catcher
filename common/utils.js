@@ -37,7 +37,7 @@ export function addEncounters(id) {
             name: id.pokemon,
             captured: 0,
             encountered:1
-        }
+        };
         localPokemon.push(newEncounter);
     }
     const stringyCart = JSON.stringify(localPokemon);
@@ -61,7 +61,7 @@ export function mungeNames(localPokemon) {
     for (let i = 0; i < localPokemon.length; i++) {
         const pokemon = localPokemon[i];
 
-        names.push(pokemon.name)
+        names.push(pokemon.name);
     }
     return names;
 }
@@ -72,7 +72,7 @@ export function mungeCaptured(localPokemon) {
     for (let i = 0; i < localPokemon.length; i++) {
         const pokemon = localPokemon[i];
 
-        captures.push(pokemon.captured)
+        captures.push(pokemon.captured);
     }
     return captures;
 }
@@ -83,7 +83,7 @@ export function mungeEncountered(localPokemon) {
     for (let i = 0; i < localPokemon.length; i++) {
         const pokemon = localPokemon[i];
 
-        encounters.push(pokemon.encountered)
+        encounters.push(pokemon.encountered);
     }
     return encounters;
 }

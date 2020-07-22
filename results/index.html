@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="./results.css">
     <title>Document</title>
 </head>
 
@@ -17,22 +17,22 @@
         <h1>Welcome to PokeGrounds!</h1>
     </header>
     <main>
-        <div>
-            <h2>Choose your Pokemon!</h2>
-            <p>You get to choose 10 pokemon, so choose wisely.</p>
-        </div>
-        <section class="main-section">
-          \
+        <section>
+            <div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js" integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w==" crossorigin="anonymous"></script>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
+            <button>Restart</button>
         </section>
     </main>
     <ul>
         <li><input type="text"></li>
     </ul>
     <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        <div class="copy gutter-right">&copy; 2020 PokeCode Lab</div>
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <script type="module" src="results.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 import pokemonArray from '../data/pokemon.js';
-import { findById } from '../common/utils.js'
+import { findById } from '../common/utils.js';
 // import { example } from '../example.js';
 
 const test = QUnit.test;
@@ -10,7 +10,7 @@ test('should find pokemon by its id', assert => {
     const pokemonData = pokemonArray;
     const id0 = 1;
     const id1 = 5;
-    const id2 = 17
+    const id2 = 17;
 
     const expected0 = 'Bulbasaur';
     const expected1 = 'Charmeleon';
@@ -28,3 +28,4 @@ test('should find pokemon by its id', assert => {
     assert.equal(findPokemon1.pokemon, expected1);
     assert.equal(findPokemon2.pokemon, expected2);
 });
+

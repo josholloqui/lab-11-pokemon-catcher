@@ -18,7 +18,7 @@ export function findById(someArray, someId) {
     return match;
 }
 
-export function getCart() {
+export function getPokeBackpack() {
     const stringyCart = localStorage.getItem(POKESTATS);
     let cart = JSON.parse(stringyCart) || [];
     
@@ -26,7 +26,7 @@ export function getCart() {
 }
 
 export function addEncounters(id) {
-    const localPokemon = getCart();
+    const localPokemon = getPokeBackpack();
     const find = findById(localPokemon, id.id);
 
     if (find) {
@@ -45,7 +45,7 @@ export function addEncounters(id) {
 }
 
 export function addCaptured(id) {
-    const localPokemon = getCart();
+    const localPokemon = getPokeBackpack();
     const find = findById(localPokemon, id);
 
     if (find) {

@@ -52,6 +52,7 @@ button {
     width: 185px;
     height: 50px;
     justify-self: center;
+    cursor: pointer;
 }
 
 footer {

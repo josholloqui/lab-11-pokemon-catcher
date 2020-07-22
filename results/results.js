@@ -2,6 +2,8 @@ var ctx = document.getElementById('myChart').getContext('2d');
 import { POKESTATS } from '../common/constants.js';
 import { mungeNames, mungeCaptured, mungeEncountered } from '../common/utils.js';
 
+const restartButton = document.querySelector('#restart');
+
 const data = JSON.parse(localStorage.getItem(POKESTATS));
 const names = mungeNames(data);
 const captured = mungeCaptured(data);
@@ -20,8 +22,8 @@ var myChart = new Chart(ctx, { // eslint-disable-line
         }, {
             label: 'Number of times Encountered',
             data: encountered,
-            backgroundColor: 'rgb(201, 223, 227, 0.5)',
-            borderColor: '#c6ccd3',
+            backgroundColor: 'rgb(148, 161, 190, 0.7)',
+            borderColor: '#4e5a65',
             borderWidth: 1
         }]
     },  
@@ -35,3 +37,8 @@ var myChart = new Chart(ctx, { // eslint-disable-line
         }
     }
 });
+
+restartButton.addEventListener('click', () => {
+    localStorage.clear();
+    window.location = '../';
+})

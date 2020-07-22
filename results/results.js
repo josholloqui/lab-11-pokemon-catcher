@@ -41,4 +41,4 @@ var myChart = new Chart(ctx, { // eslint-disable-line
 restartButton.addEventListener('click', () => {
     localStorage.clear();
     window.location = '../';
-})
+});

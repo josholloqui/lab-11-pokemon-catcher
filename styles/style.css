@@ -1,0 +1,100 @@
+
+body {
+    --header-height: 80px;
+    --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
+    --gutter: 30px;
+    --footer-height: 25px;
+    
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #f8f8ff;
+    min-width: 750min;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    background-image: url(../assets/game-boy-color-transparent-purple-transparent-png-stickpng-game-boy-color-png-1480_2480.png);
+    align-items: center;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1250px;
+    min-width: 750px;
+    padding-bottom: 625px;
+    margin-bottom: calc(var(--footer-height));
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    text-align: center;
+    background-color: #D3D3D3;
+    width: 415px;
+    height: 385px;
+    max-width: 80%;
+    border-radius: 5px;
+    border: solid 2px var(--color1);
+}
+
+div {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 100px;
+}
+
+.poke-labels {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    display: none;
+}
+
+input:checked + img {
+}
+
+img {
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.gutter-right {
+    margin-right: 20px;
+}
+
+.main-logo {
+    animation: pulse 5s infinite ease-in-out;
+}
+
+header {
+    text-align: center;
+}
+
+
+
+content {
+    width: 80%;
+}
+  
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: var(--footer-height);
+    display: flex;
+    justify-content: flex-end;
+}

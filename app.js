@@ -1,4 +1,4 @@
-import { getRandomPokemon, addEncounters, getCart, addCaptured } from './common/utils.js';
+import { getRandomPokemon, addEncounters, getPokeBackpack, addCaptured } from './common/utils.js';
 import { POKEMON } from './common/constants.js';
 import pokemonData from './data/pokemon.js';
 // initialize state
@@ -12,7 +12,7 @@ if (!wildPokemon) {
     wildPokemon = JSON.parse(localStorage.getItem(POKEMON));
 }
 
-const pokeBackpack = getCart();
+const pokeBackpack = getPokeBackpack();
 pokeBackpack;
 const collectWildPokemon = wildPokemon.slice();
 const notEncountered = wildPokemon.slice();

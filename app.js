@@ -75,6 +75,8 @@ function choosePokemonEvent(e) {
     addCaptured(Number(chosenPokemon));
 
     capturedPokemon++;
+    // animation on click
+    gsap.from("img", {duration: 1.25, opacity: 0, y: "random(-200, 200)", x: "random(-200, 200)"})
 
     setPage();
 }

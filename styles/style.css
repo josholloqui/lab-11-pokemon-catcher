@@ -5,7 +5,9 @@ body {
     --gutter: 30px;
     --footer-height: 25px;
     
-    font-family: 'Titillium Web', sans-serif;
+    font-family: narly, sans-serif;
+    font-weight: 300;
+    font-style: normal;
     background-color: #f8f8ff;
     min-width: 750min;
 }
